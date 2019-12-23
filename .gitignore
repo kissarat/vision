@@ -59,4 +59,3 @@ ssl
 .vscode
 *.zip
 build
-!build/bin/.gitkeep
