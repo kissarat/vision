@@ -58,4 +58,4 @@ ssl
 .Trashes
 .vscode
 *.zip
-build
+bin
