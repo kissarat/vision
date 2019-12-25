@@ -1,11 +1,18 @@
 #include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
 
 using namespace cv;
-const char* window = "Show Image";
+const char* window = "Play Video";
 
 int main(int argc, char** argv) {
-    std::cout << "Play Video" << std::endl;
+    VideoCapture capture;
+    capture.open(argv[1]);
+    Mat frame;
+    do {
+        capture >> frame;
+        if (frame.empty()) {
+            break;
+        }
+        imshow(window, frame);
+    } while(waitKey(1) < 0);
     return 0;
 }
