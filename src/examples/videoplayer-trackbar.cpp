@@ -1,13 +1,12 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <fstream>
+#include "../keyboard.h"
 
 using namespace cv;
 
-const char KEYBOARD_ESC = 27;
-const char KEYBOARD_SPACE = 32;
-const char COMMAND_EXIT = KEYBOARD_ESC;
-const char COMMAND_PAUSE = KEYBOARD_SPACE;
+const char COMMAND_EXIT = KEY_ESC;
+const char COMMAND_PAUSE = KEY_SPACE;
 const char COMMAND_SINGLE_STEP = 'c';
 const char COMMAND_RUN_MODE = 'r';
 std::string g_window = "TrackbarWindow";
@@ -68,7 +67,9 @@ int main(int argc, char** argv) {
             std::cout << "EXIT";
             break;
         default:
-            std::cout << "Invalid command with code" << c << std::endl;
+            if (c > 0) {
+                std::cout << "Invalid command with code" << (int)c << std::endl;
+            }
             break;
         }
     }
