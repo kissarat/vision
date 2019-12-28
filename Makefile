@@ -8,6 +8,8 @@ show-image:
 	$(CC) src/show-image.cpp -o $(TARGET_BIN)/show-image -lopencv_imgcodecs $(CFLAGS)
 play-video:
 	$(CC) src/play-video.cpp -o $(TARGET_BIN)/play-video -lopencv_videoio $(CFLAGS)
+videoplayer-trackbar:
+	$(CC) src/videoplayer-trackbar.cpp -o $(TARGET_BIN)/videoplayer-trackbar -lopencv_videoio $(CFLAGS)
 all: show-image play-video
 clean:
 	rm ${TARGET_BIN}/*
